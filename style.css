@@ -1,0 +1,282 @@
+/* YIS祭HP プロトタイプ：サイトマップ対応版 */
+:root{
+  --main:#2f6f9f;
+  --sub:#89bddb;
+  --accent:#f5c542;
+  --bg:#f4f8fb;
+  --text:#1d2730;
+  --card:#ffffff;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
+header{
+  background:linear-gradient(135deg,var(--main),var(--sub));
+  color:white;
+  padding:28px 16px 54px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+header::after{
+  content:"YIS FESTIVAL";
+  position:absolute;
+  right:12px;
+  bottom:-18px;
+  font-size:56px;
+  font-weight:900;
+  color:rgba(255,255,255,.16);
+  transform:rotate(-4deg);
+  letter-spacing:2px;
+}
+header h1{
+  margin:0;
+  font-size:clamp(30px,7vw,56px);
+  letter-spacing:.08em;
+}
+header p{margin:8px 0 0;}
+nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:white;
+  box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+.nav-inner{
+  max-width:1080px;
+  margin:auto;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+  padding:10px;
+}
+.nav-inner a{
+  color:var(--main);
+  text-decoration:none;
+  font-weight:bold;
+  padding:8px 13px;
+  border-radius:999px;
+}
+.nav-inner a:hover,.nav-inner a.current{
+  color:white;
+  background:var(--main);
+}
+main{
+  max-width:1080px;
+  margin:-34px auto 56px;
+  padding:0 18px;
+  position:relative;
+  z-index:1;
+}
+section,.page-card{
+  background:var(--card);
+  margin:24px 0;
+  padding:28px;
+  border-radius:22px;
+  box-shadow:0 8px 24px rgba(23,69,100,.10);
+}
+h2{
+  margin-top:0;
+  color:var(--main);
+  border-left:8px solid var(--accent);
+  padding-left:12px;
+  font-size:28px;
+}
+h3{color:var(--main); margin-bottom:6px;}
+a.button, button.button{
+  display:inline-block;
+  background:var(--main);
+  color:white;
+  text-decoration:none;
+  border:none;
+  border-radius:999px;
+  padding:10px 16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+a.button:hover, button.button:hover{
+  opacity:.9;
+  transform:translateY(-1px);
+}
+.hero{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:24px;
+  align-items:center;
+}
+.poster{
+  background:linear-gradient(160deg,#fff,#eaf5fb);
+  border:3px dashed var(--sub);
+  border-radius:18px;
+  padding:28px;
+  text-align:center;
+  min-height:280px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.poster strong{
+  display:block;
+  color:var(--main);
+  font-size:44px;
+  transform:rotate(-3deg);
+}
+.poster span{font-size:20px;}
+.site-map{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:20px;
+}
+.site-map a{
+  text-decoration:none;
+  color:var(--text);
+  background:#f7fbff;
+  border:1px solid #dceef7;
+  border-radius:18px;
+  padding:18px;
+  display:block;
+  min-height:128px;
+}
+.site-map a:hover{
+  outline:3px solid var(--sub);
+}
+.site-map .label{
+  color:var(--main);
+  font-size:22px;
+  font-weight:bold;
+  display:block;
+}
+.check{
+  margin-top:24px;
+  padding:15px;
+  border-radius:16px;
+  background:#eef7fc;
+}
+.check-title{
+  margin:0 0 10px;
+  color:var(--main);
+  font-weight:bold;
+}
+.check-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.check-links a{
+  background:white;
+  color:var(--main);
+  border:1px solid #c8e1ef;
+  text-decoration:none;
+  border-radius:999px;
+  padding:8px 14px;
+  font-weight:bold;
+}
+.check-links a:hover{
+  background:var(--main);
+  color:white;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:white;
+}
+th,td{
+  border:1px solid #d7e5ee;
+  padding:12px;
+  text-align:left;
+}
+th{background:#e9f4fb;color:var(--main);}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.card{
+  border:1px solid #dceef7;
+  border-radius:16px;
+  padding:16px;
+  background:#fbfdff;
+}
+.map-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+.fake-map,.school-map{
+  min-height:270px;
+  border:2px solid #c5ddeb;
+  border-radius:18px;
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(47,111,159,.12) 1px,transparent 1px),
+    linear-gradient(rgba(47,111,159,.12) 1px,transparent 1px);
+  background-size:32px 32px;
+}
+.road{
+  position:absolute;
+  width:120%;
+  height:42px;
+  top:108px;
+  left:-40px;
+  background:#d6e8f3;
+  border:2px solid white;
+  transform:rotate(-12deg);
+}
+.pin{
+  position:absolute;
+  background:var(--main);
+  color:white;
+  padding:8px 12px;
+  border-radius:12px;
+  font-weight:bold;
+}
+.station{
+  position:absolute;
+  background:var(--accent);
+  padding:8px 12px;
+  border-radius:12px;
+  left:30px;
+  bottom:35px;
+  font-weight:bold;
+}
+.floor{
+  position:absolute;
+  background:white;
+  border:2px solid var(--sub);
+  border-radius:10px;
+  padding:8px 12px;
+  font-weight:bold;
+}
+details{
+  border:1px solid #dceef7;
+  border-radius:14px;
+  padding:12px 16px;
+  margin:10px 0;
+  background:#fbfdff;
+}
+summary{
+  cursor:pointer;
+  font-weight:bold;
+  color:var(--main);
+}
+.note{font-size:14px;color:#5a6975;}
+footer{
+  text-align:center;
+  color:white;
+  background:#1f4e72;
+  padding:28px 12px;
+}
+@media(max-width:760px){
+  .hero,.map-box{grid-template-columns:1fr;}
+  .site-map,.cards{grid-template-columns:1fr;}
+  section,.page-card{padding:22px 18px;}
+  header::after{font-size:34px;}
+}
